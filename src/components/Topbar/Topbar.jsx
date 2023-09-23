@@ -1,0 +1,37 @@
+import "./Topbar.css"
+import { Search, Person, Message, Notifications } from '@mui/icons-material';
+
+export default function Topbar() {
+    return (
+        <div className="topbarContainer">
+            <div className="left">
+                <h3>SocialMedia</h3>
+            </div>
+            <div className="middle">
+                <Search style={{ color: "#ffc107" }} />
+                <input className="searchInput" type="text" placeholder="Search for friends, post or videos" />
+            </div>
+            <div className="right">
+                <div style={{ display: "flex" }}>
+                    <p>Home</p>
+                    <p>Timeline</p>
+                </div>
+                <div className="iconsContainer">
+                    <div className="topbarIcons">
+                        <Person style={{color: "#ffc107"}}/>
+                        <span className="iconsBadge">1</span>
+                    </div>
+                    <div className="topbarIcons">
+                        <Message style={{color: "#ffc107"}}/>
+                        <span className="iconsBadge">1</span>
+                    </div>
+                    <div className="topbarIcons">
+                        <Notifications style={{color: "#ffc107"}}/>
+                        <span className="iconsBadge">1</span>
+                    </div>
+                </div>
+                <img src="/assets/FB_IMG_1634883944960.jpg" alt="" className="profileImg" />
+            </div>
+        </div>
+    )
+}
