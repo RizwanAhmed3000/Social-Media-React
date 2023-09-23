@@ -8,7 +8,7 @@ export default function Topbar() {
                 <h3>SocialMedia</h3>
             </div>
             <div className="middle">
-                <Search style={{ color: "#ffc107" }} />
+                <Search style={{ color: "#FDFB00" }} />
                 <input className="searchInput" type="text" placeholder="Search for friends, post or videos" />
             </div>
             <div className="right">
@@ -18,15 +18,15 @@ export default function Topbar() {
                 </div>
                 <div className="iconsContainer">
                     <div className="topbarIcons">
-                        <Person style={{color: "#ffc107"}}/>
+                        <Person style={{ color: "#FDFB00" }} />
                         <span className="iconsBadge">1</span>
                     </div>
                     <div className="topbarIcons">
-                        <Message style={{color: "#ffc107"}}/>
+                        <Message style={{ color: "#FDFB00" }} />
                         <span className="iconsBadge">1</span>
                     </div>
                     <div className="topbarIcons">
-                        <Notifications style={{color: "#ffc107"}}/>
+                        <Notifications style={{ color: "#FDFB00" }} />
                         <span className="iconsBadge">1</span>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 .topbarContainer {
-    background-color: #282828;
+    background-color: #1A1A1A;
     color: #fff;
     padding: 8px 5px;
     display: flex;
@@ -9,12 +9,12 @@
     top: 0;
 }
 
-.left{
+.left {
     flex: 3;
 }
 
 .middle {
-    background-color: rgb(80, 80, 80);
+    background-color: #2F2E2E;
     width: 40%;
     padding: 4px 6px;
     display: flex;
@@ -35,7 +35,7 @@
     color: #fff;
 }
 
-.searchInput::placeholder{
+.searchInput::placeholder {
     color: rgb(182, 182, 182);
 }
 
@@ -48,24 +48,25 @@
 
 .right p {
     margin: 0px 5px;
+    cursor: pointer;
 }
 
 .iconsContainer {
     display: flex;
 }
 
-.topbarIcons{
+.topbarIcons {
     margin: 0px 10px;
     position: relative;
     cursor: pointer;
 }
 
-.iconsBadge{
+.iconsBadge {
     position: absolute;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: red;
+    background-color: #F26457;
     top: -5px;
     right: -5px;
     display: flex;
@@ -73,7 +74,7 @@
     font-size: 12px;
 }
 
-.profileImg{
+.profileImg {
     width: 40px;
     height: 40px;
     border-radius: 50%;
