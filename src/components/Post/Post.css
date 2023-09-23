@@ -62,6 +62,7 @@
 }
 
 .thumbsUp, .fav{
+    color: white;
     cursor: pointer;
     transition: all 250ms ease;
 }

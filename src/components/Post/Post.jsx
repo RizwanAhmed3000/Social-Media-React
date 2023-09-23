@@ -1,7 +1,26 @@
 import "./Post.css"
 import { ThumbUp, Favorite } from "@mui/icons-material"
+import { useState } from "react"
 
 export default function Post() {
+
+    const [likeCount, setLikeCount] = useState(0)
+    const [isLikeTrue, setIsLikeTrue] = useState(false)
+
+    function likeHandler(){
+        if(!isLikeTrue){
+            setLikeCount((c)=> c + 1)
+            setIsLikeTrue(true)
+        } else if(isLikeTrue) {
+            setLikeCount((c) => c - 1)
+            setIsLikeTrue(false)
+        }
+    }
+
+    function colorHandler(){
+
+    }
+
     return (
         <div className="postContainer">
             <div className="postWrapper">
@@ -22,8 +41,10 @@ export default function Post() {
                 </div>
                 <div className="postBottom">
                     <div className="likeBtn">
-                        <span className="thumbsUp"><ThumbUp/></span>
-                        <span className="fav"><Favorite/></span>2 people like it
+                        <span className="thumbsUp" onClick={() => {
+                            likeHandler()
+                        }}><ThumbUp style={isLikeTrue ? { color: "#4e79d9"} : {color: "white"}}/></span>
+                        <span className="fav"><Favorite/></span>{likeCount} people like it
                         <span></span>
                     </div>
                     <div className="commentIndicator">
