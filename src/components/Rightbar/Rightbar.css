@@ -1,4 +1,46 @@
 .rightbarContainer{
     flex: 3.5;
-    border: 1px solid pink;
 }
+
+.rightbarWrapper{
+    padding: 10px;
+}
+
+.giftImage{
+    width: 80px;
+}
+
+.eventConatiner{
+    display: flex;
+    align-items: center;
+}
+
+.eventPost{
+    width: 100%;
+}
+.eventPostImg{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.profileImgContainer{
+    position: relative;
+}
+
+.online{
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #282828;
+    background-color: #34c431;
+}
+
+.onlineFriends, .eventConatiner{
+    margin: 10px 0px;
+}
+
