@@ -2,3 +2,7 @@
     flex: 5.5;
     /* border: 1px solid orange; */
 }
+
+.feedWrapper{
+    padding: 5px 10px;
+}
