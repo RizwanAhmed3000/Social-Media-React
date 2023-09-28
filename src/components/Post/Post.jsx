@@ -1,24 +1,20 @@
 import "./Post.css"
 import { ThumbUp, Favorite } from "@mui/icons-material"
 import { useState } from "react"
+import { Users } from "../../dummyData.js"
 
-export default function Post() {
-
-    const [likeCount, setLikeCount] = useState(0)
+export default function Post({ post }) {
+    const [likeCount, setLikeCount] = useState(post.like)
     const [isLikeTrue, setIsLikeTrue] = useState(false)
 
-    function likeHandler(){
-        if(!isLikeTrue){
-            setLikeCount((c)=> c + 1)
+    function likeHandler() {
+        if (!isLikeTrue) {
+            setLikeCount((c) => c + 1)
             setIsLikeTrue(true)
-        } else if(isLikeTrue) {
+        } else if (isLikeTrue) {
             setLikeCount((c) => c - 1)
             setIsLikeTrue(false)
         }
-    }
-
-    function colorHandler(){
-
     }
 
     return (
@@ -26,16 +22,18 @@ export default function Post() {
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="authDeatil">
-                        <img src="/assets/FB_IMG_1634883944960.jpg" alt="" className="profileImage"/>
-                        <span className="userName">Username</span>
-                        <span className="timeAgo">10h ago</span>
+                        <img src={Users.filter((user) => user.id === post.userId)[0].profilePicture} alt="" className="profileImage" />
+                        <span className="userName">{
+                            Users.filter((user) => user.id === post.userId)[0].username
+                        }</span>
+                        <span className="timeAgo">{post?.date}</span>
                     </div>
                 </div>
                 <div className="postMid">
                     <div >
-                        <p className="postText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa numquam explicabo</p>
+                        <p className="postText">{post?.desc}</p>
                         <div className="postImgContainer">
-                            <img src="https://images.unsplash.com/photo-1695007439803-043bf646f197?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" className="postImg"/>
+                            <img src={post?.photo} alt="" className="postImg" />
                         </div>
                     </div>
                 </div>
@@ -43,12 +41,12 @@ export default function Post() {
                     <div className="likeBtn">
                         <span className="thumbsUp" onClick={() => {
                             likeHandler()
-                        }}><ThumbUp style={isLikeTrue ? { color: "#4e79d9"} : {color: "white"}}/></span>
-                        <span className="fav"><Favorite/></span>{likeCount} people like it
+                        }}><ThumbUp style={isLikeTrue ? { color: "#4e79d9" } : { color: "white" }} /></span>
+                        {likeCount} people like it
                         <span></span>
                     </div>
                     <div className="commentIndicator">
-                        <span>1 comment</span>
+                        <span>{post.comment} comment</span>
                     </div>
                 </div>
             </div>
