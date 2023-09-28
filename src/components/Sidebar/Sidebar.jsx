@@ -2,7 +2,7 @@ import "./Sidebar.css"
 import {
     RssFeed, Chat, PlayCircle, Groups, Bookmark, Work, Event
 } from '@mui/icons-material';
-
+import { Users } from "../../dummyData.js";
 
 export default function Sidebar() {
 
@@ -37,30 +37,11 @@ export default function Sidebar() {
         },
     ]
 
-    const friendsArray = [
-        {
-            profileImage: "/assets/FB_IMG_1634883944960.jpg",
-            name: "Rizwan"
-        },
-        {
-            profileImage: "/assets/FB_IMG_1634883944960.jpg",
-            name: "ali"
-        },
-        {
-            profileImage: "/assets/FB_IMG_1634883944960.jpg",
-            name: "bilal"
-        },
-        {
-            profileImage: "/assets/FB_IMG_1634883944960.jpg",
-            name: "hasan"
-        },
-    ]
-
     return (
         <div className="sidebarContainer">
             <div className="sidebarWrapper">
                 <SidebarItemList sidebarItmesArray={sidebarItmesArray} />
-                <SidebarFriendsList friendsArray={friendsArray} />
+                <SidebarFriendsList key={Users.id} friendsArray={Users} />
             </div>
         </div>
     )
@@ -91,10 +72,10 @@ function SidebarFriendsList({ friendsArray }) {
     return (
         <ul className="sidebarItmesList">
             {
-                Array.from([...friendsArray], (item) => (
+                Array.from([...friendsArray], (user) => (
                     <li className="sidebarItems">
-                        <img src={item.profileImage} alt="" className="profileImage"/>
-                        <span className="itemText">{item.name}</span>
+                        <img src={user.profilePicture} alt="" className="profileImage" />
+                        <span className="itemText">{user.username}</span>
                     </li>
                 ))
             }

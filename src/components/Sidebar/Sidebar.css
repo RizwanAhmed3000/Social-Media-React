@@ -2,6 +2,8 @@
     flex: 3;
     height: calc(100vh - 56px);
     overflow-y: scroll;
+    position: sticky;
+    top: 56px;
     /* border: 1px solid red; */
 }
 

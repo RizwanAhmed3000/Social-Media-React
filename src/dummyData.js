@@ -1,8 +1,8 @@
 export const Users = [
     {
         id: 1,
-        profilePicture: "assets/person/1.jpeg",
-        username: "Safak Kocaoglu",
+        profilePicture: "assets/FB_IMG_1634883944960.jpg",
+        username: "Rizwan Ahmed",
     },
     {
         id: 2,
