@@ -44,3 +44,17 @@
     margin: 10px 0px;
 }
 
+.profileRightBar{
+    padding: 20px;
+    background-color: #282828;
+    border-radius: 10px;
+}
+
+.infoContainer{
+    display: flex;
+    align-items: center;
+}
+
+.infoContainer span {
+    margin: 10px;
+}
