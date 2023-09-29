@@ -7,9 +7,9 @@ import Signup from "./pages/signup/Signup";
 function App() {
   return (
     // <Home />
-    // <Profile />
+    <Profile />
     // <Login />
-    <Signup />
+    // <Signup />
   );
 }
 
