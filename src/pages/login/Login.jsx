@@ -10,10 +10,17 @@ export default function Login() {
                 </div>
                 <div className="loginRight">
                     <div className="loginBox">
-                        <input type="email" placeholder="Email" className="loginInput"/>
-                        <input type="password" placeholder="Password" className="loginInput" />
-                        <button className="loginBtn">Log in</button>
-                        <button className="signupBtn">Create new account</button>
+                        <div class="form__group field">
+                            <input type="email" class="form__field" placeholder="Email" required="" />
+                                <label for="name" class="form__label">Email Address</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="password" class="form__field" placeholder="Email" required="" />
+                            <label for="name" class="form__label">Password</label>
+                        </div>
+                        <button className="loginBtn seeMoreBtn">Log in</button>
+                        <span className="forgetPassword">Forget password</span>
+                        <button className="signupBtn seeMoreBtn">Create new account</button>
                     </div>
                 </div>
             </div>
