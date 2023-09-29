@@ -44,6 +44,10 @@
         inset -8px -8px 16px #202020;
 }
 
+.signupBox {
+    height: 500px;
+}
+
 .form__group {
     position: relative;
     padding: 20px 0 0;
@@ -107,10 +111,12 @@
     box-shadow: none;
 }
 
-.loginBtn, .signupBtn{
+.loginBtn,
+.signupBtn {
     width: 100%;
+    margin-top: 20px;
 }
 
-.forgetPassword{
+.forgetPassword {
     cursor: pointer;
 }
