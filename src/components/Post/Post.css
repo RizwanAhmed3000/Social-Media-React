@@ -28,6 +28,7 @@
 
 .timeAgo{
     font-size: 13px;
+    color: rgb(201, 201, 201);
 }
 
 .postImgContainer{
@@ -44,6 +45,8 @@
 
 .postText{
     word-wrap: break-word;
+    font-size: 18px;
+    margin: 20px 0px;
 }
 
 .postBottom{

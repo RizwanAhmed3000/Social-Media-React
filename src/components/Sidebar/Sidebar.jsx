@@ -68,7 +68,7 @@ function SidebarItemList({ sidebarItmesArray }) {
 
 //------------------------Firends list-------------------------------//
 
-function SidebarFriendsList({ friendsArray }) {
+export function SidebarFriendsList({ friendsArray }) {
     return (
         <ul className="sidebarItmesList">
             {
