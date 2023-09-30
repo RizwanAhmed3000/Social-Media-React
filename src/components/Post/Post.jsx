@@ -1,11 +1,25 @@
 import "./Post.css"
 import { ThumbUp, Favorite } from "@mui/icons-material"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Users } from "../../dummyData.js"
+import axios from "axios";
 
 export default function Post({ post }) {
-    const [likeCount, setLikeCount] = useState(post.like)
+    // console.log(post, "==> in comp");
+    const [likeCount, setLikeCount] = useState(post.likes.length)
     const [isLikeTrue, setIsLikeTrue] = useState(false)
+    const [user, setUser] = useState({})
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            const res = await axios.get(`user/${post.userId}`);
+            const data = res.data.userDeatils
+            console.log(data);
+            setUser(data)
+        }
+        fetchUser()
+    }, [])
 
     function likeHandler() {
         if (!isLikeTrue) {
@@ -22,18 +36,18 @@ export default function Post({ post }) {
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="authDeatil">
-                        <img src={Users.filter((user) => user.id === post.userId)[0].profilePicture} alt="" className="profileImage" />
+                        <img src={PF + user?.profilePicture} alt="" className="profileImage" />
                         <span className="userName">{
-                            Users.filter((user) => user.id === post.userId)[0].username
+                            user?.userName
                         }</span>
-                        <span className="timeAgo">{post?.date}</span>
+                        <span className="timeAgo">{post?.createdAt}</span>
                     </div>
                 </div>
                 <div className="postMid">
                     <div >
-                        <p className="postText">{post?.desc}</p>
+                        <p className="postText">{post?.postDescription}</p>
                         <div className="postImgContainer">
-                            <img src={post?.photo} alt="" className="postImg" />
+                            <img src={PF + post?.postImage} alt="" className="postImg" />
                         </div>
                     </div>
                 </div>

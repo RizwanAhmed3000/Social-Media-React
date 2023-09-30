@@ -1,11 +1,14 @@
 import "./Topbar.css"
 import { Search, Person, Message, Notifications } from '@mui/icons-material';
+import { Link } from "react-router-dom";
 
 export default function Topbar() {
     return (
         <div className="topbarContainer">
             <div className="left">
-                <h3>SocialMedia</h3>
+                <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
+                    <h3>SocialMedia</h3>
+                </Link>
             </div>
             <div className="middle">
                 <Search style={{ color: "#FDFB00" }} />

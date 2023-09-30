@@ -5,6 +5,8 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Topbar from "../../components/Topbar/Topbar";
 
 export default function Profile() {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
         <>
             <Topbar />
@@ -12,8 +14,8 @@ export default function Profile() {
                 <div className="profileCardContainer">
                     <div className="profileCardWrapper">
                         <div className="profileImgs">
-                            <img src="assets/post/3.jpg" alt="" className="profileCoverImg"/>
-                            <img src="assets/FB_IMG_1634883944960.jpg" alt="" className="profileUserImg"/>
+                            <img src={`${PF}post/3.jpg`} alt="" className="profileCoverImg"/>
+                            <img src={`${PF}FB_IMG_1634883944960.jpg`} alt="" className="profileUserImg"/>
                         </div>
                         <div className="profileInfo">
                             <h2>UserName</h2>

@@ -1,6 +1,8 @@
 
 
 export default function OnlineFriendList({ onlineFriendsArray }) {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
         <>
             <h3>Online Friends</h3>
@@ -9,7 +11,7 @@ export default function OnlineFriendList({ onlineFriendsArray }) {
                     Array.from([...onlineFriendsArray], (user) => (
                         <li className="sidebarItems">
                             <div className="profileImgContainer">
-                                <img src={user.profilePicture} alt="" className="profileImage" />
+                                <img src={PF+user.profilePicture} alt="" className="profileImage" />
                                 <span className="online"></span>
                             </div>
                             <span className="itemText">{user.username}</span>

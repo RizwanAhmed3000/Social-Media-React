@@ -5,6 +5,7 @@ import {
 import { Users } from "../../dummyData.js";
 
 export default function Sidebar() {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
     const sidebarItmesArray = [
         {
@@ -41,7 +42,7 @@ export default function Sidebar() {
         <div className="sidebarContainer">
             <div className="sidebarWrapper">
                 <SidebarItemList sidebarItmesArray={sidebarItmesArray} />
-                <SidebarFriendsList key={Users.id} friendsArray={Users} />
+                <SidebarFriendsList key={Users.id} friendsArray={Users} PF={PF} />
             </div>
         </div>
     )
@@ -68,13 +69,13 @@ function SidebarItemList({ sidebarItmesArray }) {
 
 //------------------------Firends list-------------------------------//
 
-export function SidebarFriendsList({ friendsArray }) {
+export function SidebarFriendsList({ friendsArray, PF }) {
     return (
         <ul className="sidebarItmesList">
             {
                 Array.from([...friendsArray], (user) => (
                     <li className="sidebarItems">
-                        <img src={user.profilePicture} alt="" className="profileImage" />
+                        <img src={PF + user.profilePicture} alt="" className="profileImage" />
                         <span className="itemText">{user.username}</span>
                     </li>
                 ))
